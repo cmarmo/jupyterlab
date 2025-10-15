@@ -147,14 +147,14 @@ export namespace Contents {
   export type ContentType = string;
 
   /**
-   * A contents file format. Always `json` for `notebook` and
+   * A contents file format. `json` or `mystmd` for `notebook`, always `json` for
    * `directory` types. It should be set to either `text` or
    * `base64` for `file` type.
    * See the
    * [jupyter server data model for filesystem entities](https://jupyter-server.readthedocs.io/en/latest/developers/contents.html#filesystem-entities)
    * for more details.
    */
-  export type FileFormat = 'json' | 'text' | 'base64' | null;
+  export type FileFormat = 'json' | 'mystmd' | 'text' | 'base64' | null;
 
   /**
    * The options used to decode which provider to use.
@@ -1750,9 +1750,12 @@ export class RestContentProvider implements IContentProvider {
   ): Promise<Contents.IModel> {
     let url = this._getUrl(localPath);
     if (options) {
-      // The notebook type cannot take a format option.
+      // The notebook type cannot take a format option but mystmd.
       if (options.type === 'notebook') {
-        delete options['format'];
+        if (options.format === 'mystmd') {
+          console.log('mystmd');
+        }
+        // delete options['format'];
       }
       const content = options.content ? '1' : '0';
       const hash = options.hash ? '1' : '0';
