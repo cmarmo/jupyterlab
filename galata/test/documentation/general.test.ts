@@ -230,9 +230,14 @@ test.describe('General', () => {
     )?.replace(/\s/g, '');
     expect(newNotebookMetadata).toContain('"base_numbering":3');
 
+    // Modify cell metadata from advanced tools
+    const modifiedCellMetadata = (
+      await page.locator('.jp-CellMetadataEditor').first().textContent()
+    )?.replace(/\s/g, '');
+
     expect(
       await page.screenshot({
-        clip: { y: 32, x: 997, width: 283, height: 400 }
+        clip: { y: 332, x: 997, width: 283, height: 400 }
       })
     ).toMatchSnapshot('metadata_editor.png');
 
