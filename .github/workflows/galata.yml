@@ -3,7 +3,7 @@ name: UI Tests
 on:
   push:
     branches:
-      - main
+      - docs-metadata-editor
   pull_request:
   schedule:
     # Run every 6 hours to establish a baseline for flaky tests
