@@ -237,7 +237,7 @@ test.describe('General', () => {
 
     expect(
       await page.screenshot({
-        clip: { y: 332, x: 997, width: 283, height: 400 }
+        clip: { y: 340, x: 997, width: 283, height: 660 }
       })
     ).toMatchSnapshot('metadata_editor.png');
 
