@@ -2,7 +2,7 @@ name: Linux Tests
 
 on:
   push:
-    branches: [main]
+    branches: [main, docsjb2]
   pull_request:
     branches: [main]
   release:
