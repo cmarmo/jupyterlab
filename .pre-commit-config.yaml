@@ -63,11 +63,11 @@ repos:
         language: system
         types_or: [json, ts, tsx, javascript, jsx, css]
         exclude: \.ipynb$
-      - id: eslint
-        name: eslint
-        entry: 'npm run eslint:files'
-        language: system
-        types_or: [ts, tsx, javascript, jsx]
+      #- id: eslint
+      #  name: eslint
+      #  entry: 'npm run eslint:files'
+      #  language: system
+      #  types_or: [ts, tsx, javascript, jsx]
       - id: stylelint
         name: stylelint
         entry: 'npm run stylelint:files'

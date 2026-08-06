@@ -18,7 +18,7 @@ project:
             - file: source/getting_started/starting.md
             - file: source/getting_started/issue.md
             - file: source/getting_started/faq.md
-            - file: source/getting_started/changelog.md
+            - file: ../CHANGELOG.md
             - file: source/getting_started/accessibility.md
             - file: source/getting_started/lifecycle.md
             - file: source/privacy_policies.md
@@ -83,6 +83,6 @@ project:
 site:
   template: book-theme
   options:
-    favicon: source/_static/jupyter_logo.svg
+    favicon: source/_static/logo-icon.png
     logo: source/_static/logo-rectangle.svg
     logo_dark: source/_static/logo-rectangle-dark.svg
