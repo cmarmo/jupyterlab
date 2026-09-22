@@ -2943,6 +2943,7 @@ function addCommands(
   );
 
   tracker.selectionChanged.connect(() => {
+    console.warn('[delete cell] selectionChanged fired');
     commands.notifyCommandChanged(CommandIDs.duplicateBelow);
     commands.notifyCommandChanged(CommandIDs.deleteCell);
     commands.notifyCommandChanged(CommandIDs.copySelectedtext);
@@ -2971,8 +2972,8 @@ function addCommands(
     panel.content.activeCellChanged.connect((_, cell) => {
       if (cell) {
         cell.model.metadataChanged.connect(() => {
-          console.warn('[delete cell] metadataChanged fired');
           commands.notifyCommandChanged(CommandIDs.deleteCell);
+          commands.isEnabled(CommandIDs.deleteCell);
         });
       }
     });
@@ -3837,6 +3838,7 @@ function addCommands(
       }
     },
     isEnabled: args => {
+      console.warn('[delete cell] isEnabled check fired');
       const current = getCurrent(tracker, shell, { ...args, activate: false });
       if (!current) {
         return false;
@@ -5327,7 +5329,6 @@ function addCommands(
   };
   tracker.currentChanged.connect(notify);
   shell.currentChanged?.connect(notify);
-  tracker.activeCell?.model.metadataChanged.connect(notify);
 }
 
 /**
