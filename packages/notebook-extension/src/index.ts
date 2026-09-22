@@ -2968,6 +2968,14 @@ function addCommands(
     commands.notifyCommandChanged(CommandIDs.selectNextModifiedCell);
   });
   tracker.widgetAdded.connect((_, panel) => {
+    panel.content.activeCellChanged.connect((_, cell) => {
+      if (cell) {
+        cell.model.metadataChanged.connect(() => {
+          console.warn('[delete cell] metadataChanged fired');
+          commands.notifyCommandChanged(CommandIDs.deleteCell);
+        });
+      }
+    });
     panel.content.stateChanged.connect((_, args) => {
       if (args.name === 'lastModifiedCellStack') {
         commands.notifyCommandChanged(CommandIDs.selectLastModifiedCell);
@@ -5319,6 +5327,7 @@ function addCommands(
   };
   tracker.currentChanged.connect(notify);
   shell.currentChanged?.connect(notify);
+  tracker.activeCell?.model.metadataChanged.connect(notify);
 }
 
 /**
