@@ -501,6 +501,7 @@ command as well so its TypeScript changes are compiled before refreshing
 JupyterLab.
 
 (build-and-run-the-tests)=
+
 ### Build and Run the Tests
 
 ```bash
@@ -896,6 +897,7 @@ jlpm build:packages
 ```
 
 (writing-documentation)=
+
 ## Writing Documentation
 
 Documentation is written in Markdown. To ensure that the Read the Docs page builds, you'll
