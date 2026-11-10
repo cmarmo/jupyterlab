@@ -38,23 +38,6 @@ If you believe you've found a security vulnerability in JupyterLab or
 any Jupyter project, please report it as described in the
 [security policy](https://github.com/jupyterlab/jupyterlab/security/policy).
 
-```{toctree}
-:hidden: true
-
-repo
-patterns
-Accessibility <accessibility>
-internationalization
-css
-performance
-security
-```
-
-```{contents} Table of contents
-:depth: 1
-:local: true
-```
-
 ## General Guidelines for Contributing
 
 For general documentation about contributing to Jupyter projects, see
@@ -517,6 +500,7 @@ When developing a separate extension, run that extension's build or watch
 command as well so its TypeScript changes are compiled before refreshing
 JupyterLab.
 
+(build-and-run-the-tests)=
 ### Build and Run the Tests
 
 ```bash
@@ -755,7 +739,7 @@ Here are some good practices to follow when writing integration tests:
 
 To make changes to the debugger extension, a kernel with support for debugging is required.
 
-Check out the user documentation to learn how to install such kernel: {ref}`debugger`.
+Check out the user documentation to learn how to install such kernel: @debugger.
 
 Then refresh the page and the debugger sidebar should appear in the right area.
 
@@ -885,8 +869,7 @@ The JupyterLab application is made up of two major parts:
 - an npm package
 - a Jupyter server extension (Python package)
 
-Each part is named `jupyterlab`. The {ref}`developer tutorial
-documentation <developer-guide>`
+Each part is named `jupyterlab`. The @developer-guide
 provides additional architecture information.
 
 ## The NPM Packages
@@ -912,6 +895,7 @@ jlpm clean
 jlpm build:packages
 ```
 
+(writing-documentation)=
 ## Writing Documentation
 
 Documentation is written in Markdown. To ensure that the Read the Docs page builds, you'll

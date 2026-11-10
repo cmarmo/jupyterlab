@@ -127,7 +127,7 @@ builder = [
 ]
 docs = [
     { include-group = "builder" },
-    "jupyter-book>=2",
+    "jupyter-book>=2.1.4",
     "jsx-lexer",
     "pytest",
     "pytest-check-links",
