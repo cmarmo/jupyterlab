@@ -933,7 +933,7 @@ To access the documentation, first launch a server to serve the generated files:
 make serve
 ```
 
-And then go to <http://localhost:8000/> in your browser.
+And then go to <http://localhost:3000/> in your browser.
 
 The JupyterLab API reference documentation can be built separately using `jlpm`:
 
